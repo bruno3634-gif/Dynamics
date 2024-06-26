@@ -10,10 +10,10 @@ build/default/production/_ext/1171490990/initialization.o: \
  ../src/config/default/peripheral/uart/plib_uart_common.h \
  ../src/config/default/peripheral/canfd/plib_canfd1.h \
  ../src/config/default/peripheral/canfd/plib_canfd_common.h \
- ../src/config/default/peripheral/icap/plib_icap2.h \
- ../src/config/default/peripheral/icap/plib_icap_common.h \
  ../src/config/default/peripheral/tmr/plib_tmr2.h \
  ../src/config/default/peripheral/tmr/plib_tmr_common.h \
+ ../src/config/default/peripheral/icap/plib_icap2.h \
+ ../src/config/default/peripheral/icap/plib_icap_common.h \
  ../src/config/default/peripheral/tmr/plib_tmr3.h \
  ../src/config/default/peripheral/canfd/plib_canfd2.h \
  ../src/config/default/peripheral/clk/plib_clk.h \
@@ -42,13 +42,13 @@ build/default/production/_ext/1171490990/initialization.o: \
 
 ../src/config/default/peripheral/canfd/plib_canfd_common.h:
 
-../src/config/default/peripheral/icap/plib_icap2.h:
-
-../src/config/default/peripheral/icap/plib_icap_common.h:
-
 ../src/config/default/peripheral/tmr/plib_tmr2.h:
 
 ../src/config/default/peripheral/tmr/plib_tmr_common.h:
+
+../src/config/default/peripheral/icap/plib_icap2.h:
+
+../src/config/default/peripheral/icap/plib_icap_common.h:
 
 ../src/config/default/peripheral/tmr/plib_tmr3.h:
 

@@ -57,6 +57,9 @@
 // *****************************************************************************
 // *****************************************************************************
 
+void INPUT_CAPTURE_1_InterruptHandler( void );
+void INPUT_CAPTURE_2_InterruptHandler( void );
+
 
 
 #endif // INTERRUPTS_H

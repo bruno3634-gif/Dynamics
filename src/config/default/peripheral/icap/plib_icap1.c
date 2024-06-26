@@ -38,8 +38,9 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 #include "plib_icap1.h"
+#include "interrupts.h"
 
-ICAP_OBJECT icap1Obj;
+volatile static ICAP_OBJECT icap1Obj;
 // *****************************************************************************
 
 // *****************************************************************************
@@ -89,11 +90,12 @@ void ICAP1_CallbackRegister(ICAP_CALLBACK callback, uintptr_t context)
     icap1Obj.context = context;
 }
 
-void INPUT_CAPTURE_1_InterruptHandler(void)
+void __attribute__((used)) INPUT_CAPTURE_1_InterruptHandler(void)
 {
+    uintptr_t context = icap1Obj.context; 
     if( (icap1Obj.callback != NULL))
     {
-        icap1Obj.callback(icap1Obj.context);
+        icap1Obj.callback(context);
     }
     IFS0CLR = _IFS0_IC1IF_MASK;    //Clear IRQ flag
 
@@ -103,6 +105,6 @@ void INPUT_CAPTURE_1_InterruptHandler(void)
 bool ICAP1_ErrorStatusGet (void)
 {
     bool status = false;
-    status = ((IC1CON >> ICAP_STATUS_OVERFLOW) & 0x1);
+    status = (((IC1CON >> ICAP_STATUS_OVERFLOW) & 0x1U) != 0U);
     return status;
 }

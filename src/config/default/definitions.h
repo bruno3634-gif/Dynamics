@@ -53,8 +53,8 @@
 #include "peripheral/adchs/plib_adchs.h"
 #include "peripheral/uart/plib_uart1.h"
 #include "peripheral/canfd/plib_canfd1.h"
-#include "peripheral/icap/plib_icap2.h"
 #include "peripheral/tmr/plib_tmr2.h"
+#include "peripheral/icap/plib_icap2.h"
 #include "peripheral/tmr/plib_tmr3.h"
 #include "peripheral/canfd/plib_canfd2.h"
 #include "peripheral/clk/plib_clk.h"
@@ -69,6 +69,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "PIC32MK1024MCM064"
+#define DEVICE_ARCH			 "MIPS"
+#define DEVICE_FAMILY		 "PIC32MK1519"
+#define DEVICE_SERIES		 "PIC32MK"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 120000000

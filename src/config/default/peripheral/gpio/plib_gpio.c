@@ -42,6 +42,8 @@
 //DOM-IGNORE-END
 
 #include "plib_gpio.h"
+#include "interrupts.h"
+
 
 
 
@@ -64,7 +66,9 @@ void GPIO_Initialize ( void )
     TRISBCLR = 0x2U; /* Direction Control */
     ANSELBCLR = 0x2U; /* Digital Mode Enable */
     /* PORTC Initialization */
-    ANSELCCLR = 0x3U; /* Digital Mode Enable */
+    LATC = 0x0U; /* Initial Latch Value */
+    TRISCCLR = 0x800U; /* Direction Control */
+    ANSELCCLR = 0x803U; /* Digital Mode Enable */
     /* PORTD Initialization */
     /* PORTE Initialization */
     ANSELECLR = 0xc000U; /* Digital Mode Enable */

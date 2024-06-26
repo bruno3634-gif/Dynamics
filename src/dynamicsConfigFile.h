@@ -1,0 +1,6 @@
+#ifndef DYNAMICS_CONFIG_FILE_H
+#define DYNAMICS_CONFIG_FILE_H
+
+#define ADC_SAMPLES_COUNT 100
+
+#endif

@@ -1,4 +1,4 @@
-<config configName="default" projectName="DynamicsFirmware" configVersion="1.1" device="PIC32MK1024MCM064" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
+<config configName="default" projectName="DynamicsFirmware" configVersion="1.1" device="PIC32MK1024MCM064" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.0">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -8598,7 +8598,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="can2" name="CAN2_FIFO1_SIZE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;can2&gt;
   &lt;can2 dnOrder=&quot;0&quot; id=&quot;CAN2_FIFO1_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;32&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/can2&gt;
 &lt;/can2&gt;
 </value>
@@ -9093,7 +9095,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="can2" name="CAN2_FIFO2_SIZE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;can2&gt;
   &lt;can2 dnOrder=&quot;0&quot; id=&quot;CAN2_FIFO2_SIZE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;32&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/can2&gt;
 &lt;/can2&gt;
 </value>
@@ -9516,7 +9520,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="can2" name="CAN2_FILTER0_ENABLE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;can2&gt;
   &lt;can2 dnOrder=&quot;0&quot; id=&quot;CAN2_FILTER0_ENABLE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/can2&gt;
 &lt;/can2&gt;
 </value>
@@ -9562,6 +9568,22 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;can2&gt;
   &lt;can2 dnOrder=&quot;0&quot; id=&quot;CAN2_FILTER0_MASK_ID_DECIMAL&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/can2&gt;
+&lt;/can2&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="can2" name="CAN2_FILTER1"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;can2&gt;
+  &lt;can2 dnOrder=&quot;0&quot; id=&quot;CAN2_FILTER1&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+      &lt;Boolean dnOrder=&quot;1&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
   &lt;/can2&gt;
 &lt;/can2&gt;
 </value>
@@ -11319,7 +11341,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;can2&gt;
   &lt;can2 dnOrder=&quot;0&quot; id=&quot;CAN_OPMODE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;6&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/can2&gt;
 &lt;/can2&gt;
@@ -11621,7 +11643,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="can2" name="NUMBER_OF_FILTER"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;can2&gt;
   &lt;can2 dnOrder=&quot;0&quot; id=&quot;NUMBER_OF_FILTER&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/can2&gt;
 &lt;/can2&gt;
 </value>
@@ -11639,7 +11663,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="can2" name="TX_EVENT_FIFO_USE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;can2&gt;
   &lt;can2 dnOrder=&quot;0&quot; id=&quot;TX_EVENT_FIFO_USE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/can2&gt;
 &lt;/can2&gt;
 </value>
@@ -11648,7 +11674,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="can2" name="TX_QUEUE_MESSAGE_BUFFER"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;can2&gt;
   &lt;can2 dnOrder=&quot;0&quot; id=&quot;TX_QUEUE_MESSAGE_BUFFER&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;32&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/can2&gt;
 &lt;/can2&gt;
 </value>
@@ -11684,12 +11712,12 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;306&quot; canvasWidth=&quot;648&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;306&quot; canvasWidth=&quot;697&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adchs&quot; x=&quot;560&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;can1&quot; x=&quot;27&quot; y=&quot;99&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;can2&quot; x=&quot;31&quot; y=&quot;144&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;can1&quot; x=&quot;36&quot; y=&quot;97&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;can2&quot; x=&quot;36&quot; y=&quot;179&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;core&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;core_timer&quot; x=&quot;400&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
@@ -11698,7 +11726,7 @@
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;stdio&quot; x=&quot;566&quot; y=&quot;119&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;tmr2&quot; x=&quot;245&quot; y=&quot;194&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;tmr3&quot; x=&quot;239&quot; y=&quot;122&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;uart1&quot; x=&quot;406&quot; y=&quot;103&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;uart1&quot; x=&quot;405&quot; y=&quot;105&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -11886,11 +11914,44 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BSP_PIN_24_DIR"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_24_DIR&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;Out&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BSP_PIN_24_FUNCTION_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_24_FUNCTION_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;GPIO_RC11&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BSP_PIN_24_FUNCTION_TYPE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_24_FUNCTION_TYPE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;AN11&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;GPIO&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="BSP_PIN_24_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_24_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;DIGITAL&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -13826,7 +13887,18 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_C_ANSEL&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;3&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;2051&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="SYS_PORT_C_TRIS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_C_TRIS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;2048&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -15856,7 +15928,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="uart1" name="BAUD_RATE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart1&gt;
   &lt;uart1 dnOrder=&quot;0&quot; id=&quot;BAUD_RATE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;9600&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/uart1&gt;
 &lt;/uart1&gt;
 </value>
@@ -15866,7 +15940,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart1&gt;
   &lt;uart1 dnOrder=&quot;0&quot; id=&quot;BRG_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;uart1&quot; value=&quot;32&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;uart1&quot; value=&quot;390&quot;/&gt;
     &lt;/Values&gt;
   &lt;/uart1&gt;
 &lt;/uart1&gt;
@@ -16344,7 +16418,7 @@
    <generatedFileHashHistoryMap class="java.util.TreeMap">
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>0b765745184a187b0a854d37bc4b38587fe6ff4c3f8616df0be53d44f12a59e6</hash>
+         <hash>fcd9dae20d82a21b7e6ca3e742dbd676f728422186a7e73fda1a6d44e6a466cb</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -16352,19 +16426,19 @@
       </entry>
       <entry>
          <file>..\src\config\default\exceptions.c</file>
-         <hash>bacd9060af8add5471ec3170808fe766dbd651e25104b5ecc8a7ebc02935e727</hash>
+         <hash>a0d5f1a371582511cfa0a062660bf0b39ee3a603a96410ce5c7286b3ce1b1144</hash>
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>6a3e1d0922897b10d3181518b018b37031b21d17218655674c4e5293ba18bbae</hash>
+         <hash>e60637d0682fe2606be8fd2e174d54088434db950ffd49b5721a3ed58ea62454</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.c</file>
-         <hash>68a5435328f083d8006e83ae132c18fae825eed165c4c5c81961bd733d3d6e3d</hash>
+         <hash>c7dec579d91dedd9db595703a8a3ae1edbdaf064444134a344817f25ff30ad3d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.h</file>
-         <hash>91abdb8d191ae865fc6082f30783c3d6cca8aa8d5aca823a7fb2cc65e3a57d24</hash>
+         <hash>d2f273872663614c49dee30bc475cbf0356638bb38e6333bdaa6819e75a747db</hash>
       </entry>
       <entry>
          <file>..\src\config\default\p32MK1024MCM064.ld</file>
@@ -16372,7 +16446,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\adchs\plib_adchs.c</file>
-         <hash>fa4b04b00c73de1bac9b57eeac8218471253fce89a2be35153e96235e1c98ddf</hash>
+         <hash>74c3446392ac258218787dc56cfe643525acdb4054df95a2ab598aa844f5016e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\adchs\plib_adchs.h</file>
@@ -16380,75 +16454,75 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\adchs\plib_adchs_common.h</file>
-         <hash>42b5d80f0f0404c829173ecf811ff15ef762ac6c8199b37d14644bdac24f88bb</hash>
+         <hash>dd5ab056c45fde6d45c65e87abf1b86d05c0e696ee3bac54a1ebc921ee2e26ff</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\canfd\plib_canfd1.c</file>
-         <hash>cc8a8e3e9ddb537beef8a3028ce8e41c148dea7fdb2b0d22d0a588dc2d4f1ee4</hash>
+         <hash>2976dff54b1c9bf9f66f0cc31a8832d3d8b0e4f1c10d5f1b42dd6e61cd75ade9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\canfd\plib_canfd1.h</file>
-         <hash>31e65d42732d752eb67b4e8ef82f6243f3e0a9a497239e07bfbb387d3d7a365b</hash>
+         <hash>2dbb472e9a512fd2d2e4037783adf985ccf44906945cc82d930ab3fb343d6e7a</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\canfd\plib_canfd2.c</file>
-         <hash>2f164915f7646dc90f5993ee5a9c92f43847f74a843c951c0c7c8c996f854d8e</hash>
+         <hash>684393f4100b27cf7403609238b9a4b41769f7917b7ce765aeadf49d7fc09fae</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\canfd\plib_canfd2.h</file>
-         <hash>e3a4e27c1999f4d4928a3b54aa63825eec9e378f438bf723b26184a9c5a1d38d</hash>
+         <hash>d180930d40b9cee590945667a112b6bf6a5a9265f88b2b811fab11c0cc52f60e</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\canfd\plib_canfd_common.h</file>
-         <hash>85c035049f7cdd738e11d547cea98940329249529ba267c6a338f6caaaf5f9e3</hash>
+         <hash>fbf5091541d361f023f2c1fa3f04173ed84db75e64f475d14e1919856f1bf620</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\clk\plib_clk.c</file>
-         <hash>9c91a3b2bc9e17256ca0817ea51a6d5d64ba9698255095e56b17ad891b99fae1</hash>
+         <hash>462ebe13ba701fd68feae7e60b59804ef96b025fac32ca10b7dcd233886b7044</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\clk\plib_clk.h</file>
-         <hash>aeb73e24e5a518024b1c3f7dce953a5cbacead08f55e80ae465fc8d2e522e477</hash>
+         <hash>35384f2e13e59b7190bf77f6996baf3ea2377ec42df94979a6f793326def5255</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\coretimer\plib_coretimer.c</file>
-         <hash>a251b491fd77af23390ad159696ca3feedb4f76c79a8e11104003614e1db7adf</hash>
+         <hash>fffd0d46d7d9a9ed96d7946c68d1f0084d5c1d0248ccbabc72b28b1767f902a1</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\coretimer\plib_coretimer.h</file>
-         <hash>633a53df34662044866182b69c9b597da64e1f1fb2606296cf9dafcbc2a07d44</hash>
+         <hash>d34b7063ef1a236b9af04cfb49df2e60e3f1e5a74e5c2018d2f9c0208b9657f8</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\evic\plib_evic.c</file>
-         <hash>3596f8b685acea5ef1dc85617d1b8b7b4cf67a74d2315cf53238659f16e9838f</hash>
+         <hash>1493fb7bc33db7ef211cb90483f7d35e36eb94e77b1a903abd9ebf523ff81ee9</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\evic\plib_evic.h</file>
-         <hash>068eb2768877e78d75c10d23f8420b6341efac8f6a67fd83e7149e409c4511c8</hash>
+         <hash>6086a486e69dcf917e225cfbb7aea422ea08ca27ebfdb1091dbec2544d824830</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\gpio\plib_gpio.c</file>
-         <hash>ee0854f28f0a0fb4d124009ea28c64dfe19f08534a471bfa2443ae4b89ea0418</hash>
+         <hash>f6caa97b3310c97fa3d62599dba832c8510cccbcc6dd4a0060258c115767a6e6</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\gpio\plib_gpio.h</file>
-         <hash>5970a99132e500ce4936c91256a1a860bd4eb88d14d87fc1f2e6952ce9db3e0a</hash>
+         <hash>37396e4edd965e5176cb42afc659b574b05d2d240be04c53c50f666957c96516</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\icap\plib_icap1.c</file>
-         <hash>9024b53eeac18b65a8eebc062186c189e968fd67e3076908497b588559e55422</hash>
+         <hash>1c1b5710540c9fa22b817092c4de5b2b8ce0a0f93aaf5020335f2deb4d7bd0c0</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\icap\plib_icap1.h</file>
-         <hash>47e0d37d226b2794fd3c053d596659ea8ee0ca2c7794328eaf09afeaa75c643c</hash>
+         <hash>993fbf328d484ef2dae8ce44b5daeded5f738e09ba79fe8ab8e02d842b04546b</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\icap\plib_icap2.c</file>
-         <hash>9403006c185b3dd08bc5b9e13bc628181cf16ce7ed3b4659c5269018b46f9d4b</hash>
+         <hash>1c36322a96bbe971a01d6420489826c7e59d6f4750b0c0cb0955cb28d19fcb75</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\icap\plib_icap2.h</file>
-         <hash>c50be3e190bfc8de043e937925e39693e3a1654ca2b8751af08e687281e2847a</hash>
+         <hash>64fa6cdab587dfaff3f189219c0e1dd7b1d554c2514d7581c9c14436ef874e19</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\icap\plib_icap_common.h</file>
@@ -16456,19 +16530,19 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\tmr\plib_tmr2.c</file>
-         <hash>25445009bebf18742c1a5670057c32101697ea6b3cc5c0ed0a3947367fd65ba4</hash>
+         <hash>ab87953b19ddee21b7290111dd0343c26b3956f6096fc0e0c1c4175db2172301</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\tmr\plib_tmr2.h</file>
-         <hash>0270644291a8284b17a9d30d9e125f30060650d64fd723d7f59bcb0c66eba157</hash>
+         <hash>a8c0f64af9ac7c1c464062acaf1f946dfaacebf4990c01ec27a5fce73bbc49ca</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\tmr\plib_tmr3.c</file>
-         <hash>129ecc36c3d7981d7a23ef75aab50c68647c3c67d070ff396303f52ade3ff309</hash>
+         <hash>ddfc6e284743360fde89351657b846862a26107ba2df2467447ae209b88be294</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\tmr\plib_tmr3.h</file>
-         <hash>23a861a646afab93d80578432e733a0ac64096199794e8c0ba4081f412b6acf0</hash>
+         <hash>9bc63f63ed391b8e0a49c01bfcf6f33f9f50e20467b1178cbfe9dde159ebcdc4</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\tmr\plib_tmr_common.h</file>
@@ -16476,7 +16550,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\uart\plib_uart1.c</file>
-         <hash>3ec54cb804d86fa356374db0733e62e4b76d3288280f9e019c15602f9072a030</hash>
+         <hash>ae05aeb561998932f0df983574976a992ea60bc2314d8057b45e597b8a6d7163</hash>
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\uart\plib_uart1.h</file>
@@ -16484,7 +16558,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\peripheral\uart\plib_uart_common.h</file>
-         <hash>90d1791d0855caa86d5d529a0ba209330f20cd0da2436950a7e71b38ef8da02b</hash>
+         <hash>70213cd740b3ff9a591d93ad6aac9493335851db084dd862275effacdebf710d</hash>
       </entry>
       <entry>
          <file>..\src\config\default\stdio\xc32_monitor.c</file>
@@ -16492,7 +16566,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\toolchain_specifics.h</file>
-         <hash>9dfc75809b6eb23cee342231de51f6b382f8f7eabf8a939539cf44c0da32acbc</hash>
+         <hash>b4de6e02e3e48c62f7ba233405ffdf6ef31bb971d1a7b49efa1676f45cabc1ac</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>

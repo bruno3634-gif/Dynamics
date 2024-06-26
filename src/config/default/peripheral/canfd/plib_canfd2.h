@@ -67,6 +67,8 @@
 #endif
 // DOM-IGNORE-END
 
+#define CAN2_CLOCK_FREQUENCY    120000000U
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Interface Routines
@@ -80,12 +82,13 @@ void CAN2_MessageAcceptanceFilterSet(uint8_t filterNum, uint32_t id);
 uint32_t CAN2_MessageAcceptanceFilterGet(uint8_t filterNum);
 void CAN2_MessageAcceptanceFilterMaskSet(uint8_t acceptanceFilterMaskNum, uint32_t id);
 uint32_t CAN2_MessageAcceptanceFilterMaskGet(uint8_t acceptanceFilterMaskNum);
-bool CAN2_TransmitEventFIFOElementGet(uint32_t *id, uint32_t *sequence, uint32_t *timestamp);
 CANFD_ERROR CAN2_ErrorGet(void);
 void CAN2_ErrorCountGet(uint8_t *txErrorCount, uint8_t *rxErrorCount);
 bool CAN2_InterruptGet(uint8_t fifoQueueNum, CANFD_FIFO_INTERRUPT_FLAG_MASK fifoInterruptFlagMask);
 bool CAN2_TxFIFOQueueIsFull(uint8_t fifoQueueNum);
 bool CAN2_AutoRTRResponseSet(uint32_t id, uint8_t length, uint8_t* data, uint8_t fifoNum);
+bool CAN2_BitTimingCalculationGet(CANFD_BIT_TIMING_SETUP *setup, CANFD_BIT_TIMING *bitTiming);
+bool CAN2_BitTimingSet(CANFD_BIT_TIMING *bitTiming);
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
     }
