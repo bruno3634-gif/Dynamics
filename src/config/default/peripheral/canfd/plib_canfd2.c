@@ -66,7 +66,7 @@
 #define CANFD_FIFO_MESSAGE_BUFFER_MAX 32
 
 #define CANFD_CONFIGURATION_MODE      0x4UL
-#define CANFD_OPERATION_MODE          (0x2UL)
+#define CANFD_OPERATION_MODE          (0x0UL)
 #define CANFD_NUM_OF_FILTER           2U
 /* FIFO Offset in word (4 bytes) */
 #define CANFD_FIFO_OFFSET             0xcU
