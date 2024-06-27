@@ -107,7 +107,8 @@ uint8_t ADC_SUM_SAMPLES = 0;
 void captVal1();
 void captVal2();
 
-void Send_CAN(uint32_t id, uint8_t *message, uint8_t size);
+void Send_CAN1(uint32_t id, uint8_t *message, uint8_t size);
+void Send_CAN2(uint32_t id, uint8_t *message, uint8_t size);
 void Read_CAN();
 
 void Read_ADC(ADCHS_CHANNEL_NUM channel);
@@ -120,13 +121,13 @@ uint8_t resetState = 0;
 uint8_t resetSuspension();
 
 uint8_t resetedFlag = 0;
-
+uint8_t k = 0;
 int main(void)
 {
     /* Initialize all modules */
 
     SYS_Initialize(NULL);
-
+ 
     UART1_Initialize();
 
 #if ONCAR
@@ -195,14 +196,19 @@ int main(void)
             message[4] = travel_RR_CAN;
             message[5] = travel_RR_CAN >> 8;
             message[6] = resetedFlag;
-            message[7] = dynamicsState;
+            message[7] = k;
 
-            Send_CAN(0x80, message, 8);
+            Send_CAN1(0x80, message, 8);
+            Send_CAN2(0x81, message, 8);
             vTimer1 = millis();
         }
 
         if (millis() - vTimer2 >= 500)
         {
+            k++;
+            if(k==255){
+                k=0;
+            }
             GPIO_RC11_Toggle();
             // GPIO_RB1_Toggle();
             printf("AN1_RAW: %i AN2_RAW: %i\r\n", ADC[0], ADC[1]);
@@ -253,11 +259,19 @@ void Read_CAN()
     }
 }
 
-void Send_CAN(uint32_t id, uint8_t *message, uint8_t size)
+void Send_CAN1(uint32_t id, uint8_t *message, uint8_t size)
 {
     if (CAN1_TxFIFOQueueIsFull(0))
         ;
     else if (CAN1_MessageTransmit(id, size, message, 0, CANFD_MODE_NORMAL, CANFD_MSG_TX_DATA_FRAME))
+        ;
+}
+
+void Send_CAN2(uint32_t id, uint8_t *message, uint8_t size)
+{
+    if (CAN2_TxFIFOQueueIsFull(0))
+        ;
+    else if (CAN2_MessageTransmit(id, size, message, 0, CANFD_MODE_NORMAL, CANFD_MSG_TX_DATA_FRAME))
         ;
 }
 
