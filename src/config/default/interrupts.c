@@ -68,6 +68,7 @@
 // *****************************************************************************
 void INPUT_CAPTURE_1_Handler (void);
 void INPUT_CAPTURE_2_Handler (void);
+void CHANGE_NOTICE_B_Handler (void);
 
 
 // *****************************************************************************
@@ -83,6 +84,11 @@ void __ISR(_INPUT_CAPTURE_1_VECTOR, ipl1SRS) INPUT_CAPTURE_1_Handler (void)
 void __ISR(_INPUT_CAPTURE_2_VECTOR, ipl1SRS) INPUT_CAPTURE_2_Handler (void)
 {
     INPUT_CAPTURE_2_InterruptHandler();
+}
+
+void __ISR(_CHANGE_NOTICE_B_VECTOR, ipl1SRS) CHANGE_NOTICE_B_Handler (void)
+{
+    CHANGE_NOTICE_B_InterruptHandler();
 }
 
 

@@ -2,19 +2,20 @@
 
 manifest_file_version: 1.0.0
 project: DynamicsFirmware
-creation_date: 2024-06-27T00:11:28.083+01:00[Europe/London]
-operating_system: Windows 10
+creation_date: 2024-10-24T15:28:57.641+01:00[Europe/Lisbon]
+operating_system: Linux
 mcc_mode: IDE
 mcc_mode_version: v6.20
 device_name: PIC32MK1024MCM064
-compiler: XC32 4.40
+compiler: XC32 4.45
 mcc_version: 5.5.0
 mcc_core_version: 5.7.0
-content_manager_version: 5.0.0
+content_manager_version: 5.0.1
 is_mcc_offline: false
 is_using_prerelease_versions: false
 mcc_content_registries: https://registry.npmjs.org/
 device_library: {library_class: com.microchip.mcc.harmony.Harmony3Library, name: Harmony
-    V3, version: 1.3.2}
+    V3, version: 1.5.3}
 packs: {name: PIC32MK-MC_DFP, version: 1.11.151}
-modules: []
+modules:
+- {name: csp, type: HARMONY, version: v3.19.6}

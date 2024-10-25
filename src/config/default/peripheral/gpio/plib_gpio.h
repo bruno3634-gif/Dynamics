@@ -62,6 +62,21 @@
 // *****************************************************************************
 
 
+/*** Macros for ST_ANGLE pin ***/
+#define ST_ANGLE_Get()               ((PORTG >> 6) & 0x1U)
+#define ST_ANGLE_PIN                  GPIO_PIN_RG6
+
+/*** Macros for BTN pin ***/
+#define BTN_Set()               (LATBSET = (1U<<1))
+#define BTN_Clear()             (LATBCLR = (1U<<1))
+#define BTN_Toggle()            (LATBINV= (1U<<1))
+#define BTN_OutputEnable()      (TRISBCLR = (1U<<1))
+#define BTN_InputEnable()       (TRISBSET = (1U<<1))
+#define BTN_Get()               ((PORTB >> 1) & 0x1U)
+#define BTN_PIN                  GPIO_PIN_RB1
+#define BTN_InterruptEnable()   (CNENBSET = (1U<<1))
+#define BTN_InterruptDisable()  (CNENBCLR = (1U<<1))
+
 /*** Macros for GPIO_RC11 pin ***/
 #define GPIO_RC11_Set()               (LATCSET = (1U<<11))
 #define GPIO_RC11_Clear()             (LATCCLR = (1U<<11))
@@ -70,6 +85,87 @@
 #define GPIO_RC11_InputEnable()       (TRISCSET = (1U<<11))
 #define GPIO_RC11_Get()               ((PORTC >> 11) & 0x1U)
 #define GPIO_RC11_PIN                  GPIO_PIN_RC11
+
+/*** Macros for Brake_signal pin ***/
+#define Brake_signal_Set()               (LATBSET = (1U<<7))
+#define Brake_signal_Clear()             (LATBCLR = (1U<<7))
+#define Brake_signal_Toggle()            (LATBINV= (1U<<7))
+#define Brake_signal_OutputEnable()      (TRISBCLR = (1U<<7))
+#define Brake_signal_InputEnable()       (TRISBSET = (1U<<7))
+#define Brake_signal_Get()               ((PORTB >> 7) & 0x1U)
+#define Brake_signal_PIN                  GPIO_PIN_RB7
+
+/*** Macros for Blue_leds pin ***/
+#define Blue_leds_Set()               (LATCSET = (1U<<13))
+#define Blue_leds_Clear()             (LATCCLR = (1U<<13))
+#define Blue_leds_Toggle()            (LATCINV= (1U<<13))
+#define Blue_leds_OutputEnable()      (TRISCCLR = (1U<<13))
+#define Blue_leds_InputEnable()       (TRISCSET = (1U<<13))
+#define Blue_leds_Get()               ((PORTC >> 13) & 0x1U)
+#define Blue_leds_PIN                  GPIO_PIN_RC13
+
+/*** Macros for Yellow_Leds pin ***/
+#define Yellow_Leds_Set()               (LATBSET = (1U<<8))
+#define Yellow_Leds_Clear()             (LATBCLR = (1U<<8))
+#define Yellow_Leds_Toggle()            (LATBINV= (1U<<8))
+#define Yellow_Leds_OutputEnable()      (TRISBCLR = (1U<<8))
+#define Yellow_Leds_InputEnable()       (TRISBSET = (1U<<8))
+#define Yellow_Leds_Get()               ((PORTB >> 8) & 0x1U)
+#define Yellow_Leds_PIN                  GPIO_PIN_RB8
+
+/*** Macros for MS1 pin ***/
+#define MS1_Set()               (LATBSET = (1U<<9))
+#define MS1_Clear()             (LATBCLR = (1U<<9))
+#define MS1_Toggle()            (LATBINV= (1U<<9))
+#define MS1_OutputEnable()      (TRISBCLR = (1U<<9))
+#define MS1_InputEnable()       (TRISBSET = (1U<<9))
+#define MS1_Get()               ((PORTB >> 9) & 0x1U)
+#define MS1_PIN                  GPIO_PIN_RB9
+
+/*** Macros for MS2 pin ***/
+#define MS2_Set()               (LATCSET = (1U<<6))
+#define MS2_Clear()             (LATCCLR = (1U<<6))
+#define MS2_Toggle()            (LATCINV= (1U<<6))
+#define MS2_OutputEnable()      (TRISCCLR = (1U<<6))
+#define MS2_InputEnable()       (TRISCSET = (1U<<6))
+#define MS2_Get()               ((PORTC >> 6) & 0x1U)
+#define MS2_PIN                  GPIO_PIN_RC6
+
+/*** Macros for MS3 pin ***/
+#define MS3_Set()               (LATCSET = (1U<<7))
+#define MS3_Clear()             (LATCCLR = (1U<<7))
+#define MS3_Toggle()            (LATCINV= (1U<<7))
+#define MS3_OutputEnable()      (TRISCCLR = (1U<<7))
+#define MS3_InputEnable()       (TRISCSET = (1U<<7))
+#define MS3_Get()               ((PORTC >> 7) & 0x1U)
+#define MS3_PIN                  GPIO_PIN_RC7
+
+/*** Macros for MS4 pin ***/
+#define MS4_Set()               (LATCSET = (1U<<8))
+#define MS4_Clear()             (LATCCLR = (1U<<8))
+#define MS4_Toggle()            (LATCINV= (1U<<8))
+#define MS4_OutputEnable()      (TRISCCLR = (1U<<8))
+#define MS4_InputEnable()       (TRISCSET = (1U<<8))
+#define MS4_Get()               ((PORTC >> 8) & 0x1U)
+#define MS4_PIN                  GPIO_PIN_RC8
+
+/*** Macros for MS5 pin ***/
+#define MS5_Set()               (LATDSET = (1U<<5))
+#define MS5_Clear()             (LATDCLR = (1U<<5))
+#define MS5_Toggle()            (LATDINV= (1U<<5))
+#define MS5_OutputEnable()      (TRISDCLR = (1U<<5))
+#define MS5_InputEnable()       (TRISDSET = (1U<<5))
+#define MS5_Get()               ((PORTD >> 5) & 0x1U)
+#define MS5_PIN                  GPIO_PIN_RD5
+
+/*** Macros for MS6 pin ***/
+#define MS6_Set()               (LATDSET = (1U<<6))
+#define MS6_Clear()             (LATDCLR = (1U<<6))
+#define MS6_Toggle()            (LATDINV= (1U<<6))
+#define MS6_OutputEnable()      (TRISDCLR = (1U<<6))
+#define MS6_InputEnable()       (TRISDSET = (1U<<6))
+#define MS6_Get()               ((PORTD >> 6) & 0x1U)
+#define MS6_PIN                  GPIO_PIN_RD6
 
 
 // *****************************************************************************
@@ -181,6 +277,7 @@ typedef enum
 
 typedef uint32_t GPIO_PIN;
 
+typedef  void (*GPIO_PIN_CALLBACK) ( GPIO_PIN pin, uintptr_t context);
 
 void GPIO_Initialize(void);
 
@@ -205,6 +302,29 @@ void GPIO_PortToggle(GPIO_PORT port, uint32_t mask);
 void GPIO_PortInputEnable(GPIO_PORT port, uint32_t mask);
 
 void GPIO_PortOutputEnable(GPIO_PORT port, uint32_t mask);
+
+void GPIO_PortInterruptEnable(GPIO_PORT port, uint32_t mask);
+
+void GPIO_PortInterruptDisable(GPIO_PORT port, uint32_t mask);
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Local Data types and Prototypes
+// *****************************************************************************
+// *****************************************************************************
+
+typedef struct {
+
+    /* target pin */
+    GPIO_PIN                 pin;
+
+    /* Callback for event on target pin*/
+    GPIO_PIN_CALLBACK        callback;
+
+    /* Callback Context */
+    uintptr_t               context;
+
+} GPIO_PIN_CALLBACK_OBJ;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -253,6 +373,17 @@ static inline void GPIO_PinOutputEnable(GPIO_PIN pin)
     GPIO_PortOutputEnable((pin>>4U), (uint32_t)0x1U << (pin & 0xFU));
 }
 
+#define GPIO_PinInterruptEnable(pin)       GPIO_PinIntEnable(pin, GPIO_INTERRUPT_ON_MISMATCH)
+#define GPIO_PinInterruptDisable(pin)      GPIO_PinIntDisable(pin)
+
+void GPIO_PinIntEnable(GPIO_PIN pin, GPIO_INTERRUPT_STYLE style);
+void GPIO_PinIntDisable(GPIO_PIN pin);
+
+bool GPIO_PinInterruptCallbackRegister(
+    GPIO_PIN pin,
+    const   GPIO_PIN_CALLBACK callback,
+    uintptr_t context
+);
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

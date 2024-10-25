@@ -195,13 +195,13 @@ void SYS_Initialize ( void* data )
 
     ICAP2_Initialize();
 
-    TMR2_Initialize();
-
     CAN1_Initialize();
 
-    TMR3_Initialize();
+    TMR2_Initialize();
 
     CAN2_Initialize();
+
+    TMR3_Initialize();
 
     ICAP1_Initialize();
 

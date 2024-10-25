@@ -59,6 +59,7 @@
 
 void INPUT_CAPTURE_1_InterruptHandler( void );
 void INPUT_CAPTURE_2_InterruptHandler( void );
+void CHANGE_NOTICE_B_InterruptHandler( void );
 
 
 

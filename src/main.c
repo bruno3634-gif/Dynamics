@@ -56,7 +56,7 @@
 #define CALIB_ID 0x40
 // ############# RX CAN FRAME ###############################
 static uint8_t rx_message[8] = {};
-
+volatile int mission = 0,mission_changed = 0,alc_emergencia = 0;
 uint32_t messageID = 0;
 uint32_t rx_messageID = 0;
 uint32_t status = 0;
@@ -68,6 +68,8 @@ CANFD_MSG_RX_ATTRIBUTE msgAttr = CANFD_MSG_RX_DATA_FRAME;
 
 unsigned long vTimer1 = 0;
 unsigned long vTimer2 = 0;
+unsigned long alc_time = 0;
+int alc_light_state= 0;
 static uint8_t message[8];
 uint16_t captValue1 = 0;
 uint16_t captValue2 = 0;
@@ -104,6 +106,12 @@ float travelDistance_RL = 0;
 
 uint8_t ADC_SUM_SAMPLES = 0;
 
+static void btn_handler();
+void display_mission();
+void ALC(int state);
+
+
+
 void captVal1();
 void captVal2();
 
@@ -129,6 +137,7 @@ int main(void)
     SYS_Initialize(NULL);
  
     UART1_Initialize();
+    
 
 #if ONCAR
     while (!calibrated)
@@ -152,6 +161,8 @@ int main(void)
     TMR2_Start();
     ICAP2_CallbackRegister(&captVal2, 1);
     ICAP2_Enable();
+    GPIO_PinInterruptCallbackRegister(BTN_PIN,btn_handler,0);
+    BTN_InterruptEnable();
 
     init_ADC();
 
@@ -214,6 +225,7 @@ int main(void)
             printf("AN1_RAW: %i AN2_RAW: %i\r\n", ADC[0], ADC[1]);
             vTimer2 = millis();
         }
+        display_mission();
     }
 
     /* Execution should not come here during normal operation */
@@ -246,6 +258,7 @@ unsigned long millis(void)
 {
     return (unsigned int)(CORETIMER_CounterGet() / (CORE_TIMER_FREQUENCY / 1000));
 }
+
 
 void Read_CAN()
 {
@@ -305,6 +318,113 @@ void init_ADC()
     ADCHS_ChannelConversionStart(ADCHS_CH0);
     ADCHS_ChannelConversionStart(ADCHS_CH1);
 }
+
+
+
+static void btn_handler(){
+    mission++;
+    mission_changed = 1;
+}
+
+
+
+void display_mission(){
+    if(mission_changed == 1){
+        MS1_Clear();
+        MS2_Clear();
+        MS3_Clear();
+        MS4_Clear();
+        MS5_Clear();
+        MS6_Clear();
+        switch(mission){
+            case 1:
+                MS1_Set();
+                break;
+            case 2:
+                MS2_Set();
+                break;
+            case 3:
+                MS3_Set();
+                break;
+            case 4:
+                MS4_Set();
+                break;
+            case 5:
+                MS5_Set();
+                break;
+            case 6:
+                MS6_Set();
+                break;
+            default:
+                mission = 0;
+        }
+        mission_changed = 0;    
+    }
+}
+
+
+
+
+
+
+
+void ALC(int state){
+    switch(state){
+        case 0:
+            alc_emergencia = 0;
+            Yellow_Leds_Clear();
+            Blue_leds_Clear();
+            break;
+        case 1:
+            alc_emergencia = 0;
+            Yellow_Leds_Set();
+            Blue_leds_Clear();
+            break;
+        case 2:
+            if(millis() >  alc_time + 500){
+                if(alc_light_state == 0){
+                Yellow_Leds_Set();
+                Blue_leds_Clear();
+                alc_light_state = 1;
+                }else{
+                    Yellow_Leds_Clear();
+                    Blue_leds_Clear();
+                    alc_light_state = 0;
+                }
+                alc_emergencia = 0;
+                alc_time = millis();
+            }
+            break;
+        case 3:
+            Yellow_Leds_Clear();
+            Blue_leds_Set();
+            alc_emergencia = 0;
+            break;
+        case 4:
+            if(millis() >  alc_time + 500){
+                if(alc_light_state == 0){
+                    Yellow_Leds_Clear();
+                    Blue_leds_Set();
+                    alc_light_state = 1;
+                }else{
+                    Yellow_Leds_Clear();
+                    Blue_leds_Clear();
+                    alc_light_state = 0;
+                }
+                alc_time = millis();
+            }
+            alc_emergencia = 1;
+            break;
+        default:
+            Yellow_Leds_Clear();
+            Blue_leds_Clear();
+            alc_emergencia = 0;
+    }
+}
+
+
+
+
 
 /*******************************************************************************
  End of File

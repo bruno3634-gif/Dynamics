@@ -58,6 +58,7 @@ void EVIC_Initialize( void )
     /* Set up priority and subpriority of enabled interrupts */
     IPC1SET = 0x40000U | 0x0U;  /* INPUT_CAPTURE_1:  Priority 1 / Subpriority 0 */
     IPC2SET = 0x4000000U | 0x0U;  /* INPUT_CAPTURE_2:  Priority 1 / Subpriority 0 */
+    IPC11SET = 0x400U | 0x300U;  /* CHANGE_NOTICE_B:  Priority 1 / Subpriority 3 */
 
 
 
@@ -139,6 +140,29 @@ void EVIC_INT_Restore( bool state )
         /* restore the state of CP0 Status register before the disable occurred */
        (void) __builtin_enable_interrupts();
     }
+}
+
+bool EVIC_INT_SourceDisable( INT_SOURCE source )
+{
+    bool processorStatus;
+    bool intSrcStatus;
+
+    processorStatus = EVIC_INT_Disable();
+    intSrcStatus = (EVIC_SourceIsEnabled(source) != 0U);
+    EVIC_SourceDisable( source );
+    EVIC_INT_Restore( processorStatus );
+
+    /* return the source status */
+    return intSrcStatus;
+}
+
+void EVIC_INT_SourceRestore( INT_SOURCE source, bool status )
+{
+    if( status ) {
+       EVIC_SourceEnable( source );
+    }
+
+    return;
 }
 
 
