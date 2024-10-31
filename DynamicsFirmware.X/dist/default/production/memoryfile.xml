@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <project>                                  
-  <executable name="dist/default/debug/DynamicsFirmware.X.debug.elf">                 
+  <executable name="dist/default/production/DynamicsFirmware.X.production.elf">                 
     <memory name="program">                 
       <units>bytes</units>                 
       <length>1049728</length>                 
-      <used>18472</used>                     
-      <free>1031256</free>                     
+      <used>18452</used>                     
+      <free>1031276</free>                     
     </memory>                              
     <memory name="data">              
       <units>bytes</units>                 
-      <length>263024</length>                 
-      <used>2396</used>                     
-      <free>260628</free>                     
+      <length>262144</length>                 
+      <used>636</used>                     
+      <free>261508</free>                     
     </memory>                              
   </executable>                            
 </project>                                 

@@ -85,10 +85,11 @@ uint8_t dynamicsState = 1;
 float freq_RR = 0;
 float freq_RL = 0;
 
-#define Dentes_Coroa 4
-#define Raio_Roda 100
+#define Dentes_Coroa 36
+#define Raio_Roda 260
+#define Perimetro 1.6336
 
-static uint16_t ADC[64]; // ADC�raw�data
+static uint16_t ADC[64]; 
 static uint32_t ADC_SUM[64];
 
 float graus_Segundo_RR = 0;
@@ -167,9 +168,10 @@ int main(void)
     init_ADC();
 
     // setup
-
+    int state = 0;
     while (true)
     {
+        
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks();
 
@@ -183,25 +185,44 @@ int main(void)
 
         travelDistance_RR = (pos_RR_Voltage - flatPos_RR_Voltage) / steadyGain_RR;
         travelDistance_RL = (pos_RL_Voltage - flatPos_RL_Voltage) / steadyGain_RL;
-
-        freq_RR = 1000 / (float)(captValue1 * 279 / 65389);
-        freq_RL = 1000 / (float)(captValue2 * 279 / 65389);
+        float velocidadeL;
+        float velocidadeR;
+        if(captValue1 != 0){
+            //freq_RR = 1000 / (float)(captValue1 * 279 / 65389);
+           velocidadeR = (Perimetro / 36*(float)(captValue1 * 279 / 65389));
+        }
+        else{
+            //freq_RR = 0;
+            velocidadeR = 0;
+        }
+        if(captValue2 != 0){
+            //freq_RL = 1000 / (float)(captValue1 * 279 / 65389);
+            velocidadeL = (Perimetro / 36*(float)(captValue2 * 279 / 65389));
+        }
+        else{
+            //freq_RL = 0;
+             velocidadeL = 0;
+        }
+        
+        
 
         graus_Segundo_RR = 360 * freq_RR * Dentes_Coroa;
         graus_Segundo_RL = 360 * freq_RL * Dentes_Coroa;
 
-        velocidade_Roda_RR = graus_Segundo_RR * 3.14 * Raio_Roda / 50;
-        velocidade_Roda_RL = graus_Segundo_RL * 3.14 * Raio_Roda / 50;
+        //velocidade_Roda_RR = graus_Segundo_RR * 3.14 * Raio_Roda / 50;
+        //velocidade_Roda_RL = graus_Segundo_RL * 3.14 * Raio_Roda / 50;
 
         if (millis() - vTimer1 >= 5)
         {
 
             uint16_t travel_RL_CAN = (travelDistance_RL + 25) * 100;
             uint16_t travel_RR_CAN = (travelDistance_RR + 25) * 100;
-            uint16_t velocidade_Roda_RL_CAN = velocidade_Roda_RL;
-
-            message[0] = velocidade_Roda_RL_CAN;
-            message[1] = 120;
+            //uint16_t velocidade_Roda_RL_CAN = velocidade_Roda_RL;
+            uint8_t velocidade_rl_can = velocidadeL;
+            uint8_t velocidade_rr_can = velocidadeR;
+            //message[0] = velocidade_Roda_RL_CAN;
+            message[0] = velocidade_rl_can;
+            message[1] = velocidade_rr_can;
             message[2] = travel_RL_CAN;
             message[3] = travel_RL_CAN >> 8;
             message[4] = travel_RR_CAN;
@@ -222,10 +243,16 @@ int main(void)
             }
             GPIO_RC11_Toggle();
             // GPIO_RB1_Toggle();
-            printf("AN1_RAW: %i AN2_RAW: %i\r\n", ADC[0], ADC[1]);
+           // printf("AN1_RAW: %i AN2_RAW: %i\r\n", ADC[0], ADC[1]);
+            printf("Speed RL: %.2f  Speed RR: %.2f\n\r",velocidadeL,velocidadeR);
             vTimer2 = millis();
         }
         display_mission();
+        Read_CAN();
+        if(rx_messageID == 0x502){
+            state = rx_message[0];
+        }
+        ALC(state);
     }
 
     /* Execution should not come here during normal operation */

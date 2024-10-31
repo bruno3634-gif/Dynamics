@@ -16465,7 +16465,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart1&gt;
   &lt;uart1 dnOrder=&quot;0&quot; id=&quot;BAUD_RATE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;9600&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;115200&quot;/&gt;
     &lt;/Values&gt;
   &lt;/uart1&gt;
 &lt;/uart1&gt;
@@ -16476,7 +16476,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart1&gt;
   &lt;uart1 dnOrder=&quot;0&quot; id=&quot;BRG_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;uart1&quot; value=&quot;390&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;uart1&quot; value=&quot;32&quot;/&gt;
     &lt;/Values&gt;
   &lt;/uart1&gt;
 &lt;/uart1&gt;
@@ -17086,7 +17086,7 @@
       </entry>
       <entry>
          <file>../src/config/default/peripheral/uart/plib_uart1.c</file>
-         <hash>ae05aeb561998932f0df983574976a992ea60bc2314d8057b45e597b8a6d7163</hash>
+         <hash>aef70bc8ce77f22c5466c0fe92f4a7b0e891ca1e0f60f4c0cc10688fd7d0b210</hash>
       </entry>
       <entry>
          <file>../src/config/default/peripheral/uart/plib_uart1.h</file>
